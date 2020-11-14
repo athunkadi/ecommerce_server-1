@@ -7,6 +7,7 @@ const router = require('express').Router();
 router.use(authentication);
 router.get('/', ProductController.findAll);
 router.post('/', authorization, ProductController.create);
+router.get('/:id', authorization, ProductController.findId);
 router.put('/:id', authorization, ProductController.update);
 router.delete('/:id', authorization, ProductController.delete);
 

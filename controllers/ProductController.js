@@ -31,9 +31,27 @@ class ProductController{
       })
   }
 
+  static findId (req, res, next) {
+    const idProduct = +req.params.id;
+
+    Product.findOne({ where: {id: idProduct}})
+      .then(data => {
+        if(data){
+          res.status(200).json(data);
+        } else {
+          res.status(404).json({"error": "Task Not Found"})
+        }
+      })
+      .then(err => {
+        next(err)
+      })
+      .catch(err => {
+        res.status(500).json(err)
+      })
+  }
+
   static update(req, res, next){
     const idProduct = +req.params.id;
-    console.log(idProduct, '<<<< dari controller')
     const obj = {
       name: req.body.name,
       image_url: req.body.image_url,

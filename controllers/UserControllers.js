@@ -39,6 +39,7 @@ class UserController {
         where: {email : payload.email}
       })
         .then(data => {
+          console.log(data);
           if(!data) {
             // next({ msg : 'wrong email/password', status : 401});   
             res.status(401).json({ msg : "wrong email/password"});
