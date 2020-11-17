@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     hooks: {
       beforeCreate(instance){
         instance.password = hashPass(instance.password);
+        instance.role = "Costumer"
       }
     }
   });

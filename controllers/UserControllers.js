@@ -8,7 +8,6 @@ class UserController {
     const obj = {
       email: req.body.email,
       password: req.body.password,
-      role: "Customer"
     }
 
     User.create(obj)
@@ -16,7 +15,6 @@ class UserController {
         res.status(201).json({ 
           'id' : data.id, 
           'email': data.email, 
-          'role': data.role
         });
       })
       .catch(err => {

@@ -42,9 +42,9 @@ class ProductController{
           res.status(404).json({"error": "Task Not Found"})
         }
       })
-      .then(err => {
-        next(err)
-      })
+      // .then(err => {
+      //   next(err)
+      // })
       .catch(err => {
         res.status(500).json(err)
       })
