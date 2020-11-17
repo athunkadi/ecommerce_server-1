@@ -4,8 +4,8 @@ const authorization = require('../middlewares/authorization');
 
 const router = require('express').Router();
 
-router.use(authentication);
 router.get('/', ProductController.findAll);
+router.use(authentication);
 router.post('/', authorization, ProductController.create);
 router.get('/:id', authorization, ProductController.findId);
 router.put('/:id', authorization, ProductController.update);
