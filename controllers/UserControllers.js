@@ -7,7 +7,7 @@ class UserController {
   static register(req, res, next){
     const obj = {
       email: req.body.email,
-      password: req.body.password,
+      password: req.body.password
     }
 
     User.create(obj)
@@ -51,7 +51,7 @@ class UserController {
               role: data.role
             })
             // console.log(access_token, "<<<<<<<<<< acesstoken")
-            res.status(200).json({ access_token });
+            res.status(200).json({ access_token : access_token, role : data.role });
           }
         })
         .catch(err => {
@@ -59,7 +59,6 @@ class UserController {
         })
     }
   }
-
 }
 
 module.exports = UserController

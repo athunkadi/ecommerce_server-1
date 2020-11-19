@@ -268,3 +268,180 @@
     ```
 
 ==================================================
+
+**Add Cart**
+----
+
+* **URL**
+```
+  /cart
+```
+* **Method:**
+```
+  `post`
+```
+* **Data Headers**
+
+  ```
+    {
+      access_token : "string"
+    }
+  ```
+
+* **Data Params**
+
+  ```
+    {
+      ProductId: 18
+    }
+  ```
+
+* **Success Response:**
+
+  * **Code:** 201 <br />
+    **Content:** 
+    ```
+    {
+      "id": 23,
+      "UserId": 2,
+      "ProductId": 20,
+      "quantity": 1,
+      "status": "false",
+      "updatedAt": "2020-11-18T23:59:54.773Z",
+      "createdAt": "2020-11-18T23:59:54.773Z"
+    }
+    ```
+
+==================================================
+
+**findAll Cart**
+----
+
+* **URL**
+```
+  /cart
+```
+* **Method:**
+```
+  `get`
+```
+* **Data Headers**
+
+  ```
+    {
+      access_token : "string"
+    }
+  ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```
+    [
+      {
+        "id": 23,
+        "UserId": 2,
+        "ProductId": 20,
+        "quantity": 1,
+        "status": "false",
+        "updatedAt": "2020-11-18T23:59:54.773Z",
+        "createdAt": "2020-11-18T23:59:54.773Z"
+      },
+      {
+        "id": 24,
+        "UserId": 2,
+        "ProductId": 19,
+        "quantity": 1,
+        "status": "false",
+        "updatedAt": "2020-11-18T23:59:54.773Z",
+        "createdAt": "2020-11-18T23:59:54.773Z"
+      }
+    ]
+    ```
+
+==================================================
+
+**Update Cart**
+----
+
+* **URL**
+```
+  /cart
+```
+* **Method:**
+```
+  `patch`
+```
+* **Data Headers**
+
+  ```
+    {
+      access_token : "string"
+    }
+  ```
+
+* **Data Params**
+
+  ```
+    {
+      quantity: 2
+    }
+  ```
+
+* **Success Response:**
+
+  * **Code:** 201 <br />
+    **Content:** 
+    ```
+    {
+      "id": 23,
+      "UserId": 2,
+      "ProductId": 20,
+      "quantity": 3,
+      "status": "false",
+      "updatedAt": "2020-11-18T23:59:54.773Z",
+      "createdAt": "2020-11-18T23:59:54.773Z"
+    }
+    ```
+
+==================================================
+
+**Delete Cart**
+----
+
+* **URL**
+```
+  /cart/:id
+```
+* **Method:**
+```
+  `patch`
+```
+* **Data Headers**
+
+  ```
+    {
+      access_token : "string"
+    }
+  ```
+
+* **Data Params**
+
+  ```
+    {
+      id: 2
+    }
+  ```
+
+* **Success Response:**
+
+  * **Code:** 201 <br />
+    **Content:** 
+    ```
+    {
+      msg: 'sukses delete'
+    }
+    ```
+
+==================================================

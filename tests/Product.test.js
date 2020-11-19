@@ -44,6 +44,35 @@ beforeAll((done) => {
 
 let idProduct ;
 
+describe('Test Endpoint GET /product', () => {
+  it('test get Success', (done) => {
+    request(app)
+      .get('/product')
+      .set({
+        access_token: token
+      })
+      .then(res => {
+        const { body, status } = res;
+
+        console.log(body, '<<<<<ini body');
+        console.log(status, '<<<<ini status');
+        done()
+      })
+  })
+
+  it.only('test get fail', (done) => {
+    request(app)
+      .get('/product')
+      .then(res => {
+        const { body, status } = res;
+
+        console.log(body, '<<<<<ini body');
+        console.log(status, '<<<<ini status');
+        done()
+      })
+  })
+})
+
 describe('Test Endpoint POST /product', () => {
 
   //sukses create
@@ -369,7 +398,7 @@ describe('Test Endpoint PUT /product/:id', () => {
 
 })
 
-describe('Test Endpoint DELETE //product/:id', () => {
+describe('Test Endpoint DELETE /product/:id', () => {
   //test sukses
   it('test delete Success', (done) => {
     request(app)

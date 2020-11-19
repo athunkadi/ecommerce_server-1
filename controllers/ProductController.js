@@ -1,4 +1,5 @@
-const { Product } = require('../models');
+const { Product, Sequelize } = require('../models');
+const Op = Sequelize.Op;
 
 class ProductController{
 
@@ -77,7 +78,7 @@ class ProductController{
         res.status(200).json({name : data.name, msg : 'Delete Success'});
       })
       .catch(err => {
-        res.status(401).json({msg: err.errors[0].message})
+        res.status(500).json({msg: err.errors[0].message})
         // next(err)
       })
   }
